@@ -145,6 +145,19 @@ class Songo {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+     alert(`REGLES DU JEU SONGO-------------------------------
+         le songo est un jeu de societe traditionnel africain qui se joue a deux sur un tablier en bois creuse de quatorze fosses disposees en deux rangees de sept chaque joueur controle la rangee de sept fosses qui se trouve de son cote au depart chaque fosse contient exactement cinq graines pour un total de soixante dix graines dans le jeu
+
+                le but du j_eu est de capturer un maximum de graines pour affamer ladversaire ou atteindre un score suffisant pour gagner la partie
+
+                a son tour un joueur choisit une fosse de son cote contenant des graines il les prend toutes et les distribue une par une dans les fosses suivantes en tournant dans le sens inverse des aiguilles d une montre si le nombre de graines est tres grand et fait faire un tour complet au plateau le joueur doit sauter sa propre fosse de depart sans y deposer de graine
+
+                la capture des graines se fait uniquement lorsque la derniere graine d une distribution tombe dans une fosse du camp adverse si cette fosse contient alors une deux ou trois graines apres le depot le joueur les capture toutes de plus si les fosses qui precedent immediatement cette
+                case dans le camp adverse contiennent aussi une deux ou trois graines elles sont capturees a la chaine cest ce qu on appelle le mani
+
+                il existe une regle essentielle appelee anti affamement si un coup conduit a capturer toutes les graines du camp de ladversaire et a le laisser sans rien pour jouer le coup est interdit ou les captures ne sont pas validees car on doit toujours laisser a ladversaire la possibilite de continuer a jouer
+
+                la partie se termine des qu un joueur parvient a capturer plus de la moitie des graines du j_eu soit au moins trente six graines ou lorsque les deux joueurs se retrouvent totalement bloques sans pouvoir jouer de coup valide dans ce cas le joueur qui a accumule le plus de graines est declare vainqueur `);
     const jeu = new Songo();
 
     const sonClic = new Audio('sounds/click.mp3');
