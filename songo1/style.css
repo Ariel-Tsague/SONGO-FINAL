@@ -1,0 +1,468 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2e2e30;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.3) 20%, transparent 20%), radial-gradient(rgba(0, 0, 0, 0.3) 20%, transparent 20%);
+    background-size: 8px 8px;
+    background-position: 0 0, 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+#appCont {
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    height: 90vh;
+    max-width: 1400px;
+    background-color: #3a3a3c;
+    border: 4px solid #1a1a1b;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+#menuLat {
+    width: 260px;
+    background: linear-gradient(135deg, #28282a, #1f1f20);
+    border-right: 3px solid #1a1a1b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#boxLogo {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #444;
+}
+
+#logoApp {
+    max-width: 160px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20%;
+}
+
+#modesPrinci,
+.panneauSousMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btnMenu {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to bottom, #57575a, #434345);
+    color: #e0e0e0;
+    border: 2px solid #28282a;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.btnMenu:hover {
+    background: linear-gradient(to bottom, #707073, #535356);
+    color: #ffffff;
+    border-color: #1a1a1b;
+    transform: translateX(4px);
+}
+
+.btnRetour {
+    width: 100%;
+    padding: 10px;
+    background: #c23616;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s;
+}
+
+.btnRetour:hover {
+    background: #e84118;
+}
+
+#cntPrinci {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #474749;
+    padding: 25px;
+    overflow-y: auto;
+}
+
+#entete h1 {
+    margin: 0 0 25px 0;
+    font-size: 2.2rem;
+    color: #f5f5f5;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-bottom: 3px solid #3a3a3c;
+    padding-bottom: 10px;
+}
+
+#zoneCont {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carteInfo {
+    background: #2a2a2b;
+    border: 2px solid #1a1a1b;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+}
+
+.carteInfo h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.groupeInput {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.groupeInput label {
+    font-weight: 600;
+    color: #b0b0b2;
+}
+
+input[type="text"] {
+    padding: 12px;
+    background-color: #1f1f20;
+    border: 2px solid #3a3a3c;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #57575a;
+}
+
+.btnAct {
+    width: 100%;
+    padding: 12px;
+    background: #4a75a0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s;
+}
+
+.btnAct:hover {
+    background: #5b87b3;
+}
+
+#partageId {
+    display: block;
+    background-color: #1f1f20;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e67e22;
+    border: 1px dashed #e67e22;
+    margin: 15px 0;
+}
+
+#jeuCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#tabJeu {
+    background: linear-gradient(135deg, #5a544e, #3a3530);
+    border: 10px solid #2b2521;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 15px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 750px;
+}
+
+.lignePlateau {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+    padding: 15px 10px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+#rangA {
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#rangB {
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.case {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 30% 30%, #201c18, #000000);
+    border: 3px solid #1a1512;
+    border-radius: 50%;
+    color: #f0f0f0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.1), 0 6px 10px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s;
+}
+
+.caseJ2:hover {
+    transform: scale(1.15) translateY(-5px);
+    background: radial-gradient(circle at 30% 30%, #7f2c2c, #3a0e0e);
+    border-color: #5c1818;
+}
+
+.caseJ1:hover {
+    transform: scale(1.15) translateY(5px);
+    background: radial-gradient(circle at 30% 30%, #2c6e3d, #11361a);
+    border-color: #1a4d29;
+}
+
+#barreCtrl {
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2b;
+    padding: 12px 25px;
+    border-radius: 10px;
+    border: 1px solid #1a1a1b;
+}
+
+#infos {
+    margin: 0;
+    color: #b0b0b2;
+    font-style: italic;
+}
+
+#restart {
+    width: auto;
+    padding: 8px 20px;
+    background-color: #7f8c8d;
+}
+
+#restart:hover {
+    background-color: #95a5a6;
+}
+
+#statutLat {
+    width: 240px;
+    background-color: #222224;
+    border-left: 3px solid #1a1a1b;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carteStatut {
+    background-color: #2e2e30;
+    border: 1px solid #3a3a3c;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+#boxRole strong {
+    color: #4a75a0;
+}
+
+.panneauJoueurs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.blocJoueur {
+    background: #2a2a2b;
+    border-left: 4px solid #7f8c8d;
+    border-radius: 0 6px 6px 0;
+    padding: 15px;
+}
+
+#blocJ1 {
+    border-left-color: #2c6e3d;
+}
+
+#blocJ2 {
+    border-left-color: #7f2c2c;
+}
+
+.blocJoueur h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.txtScore {
+    margin: 0;
+    color: #b0b0b2;
+    font-size: 0.95rem;
+}
+
+.txtScore span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#res {
+    background-color: #1e3799;
+    color: white;
+    padding: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+    #appCont {
+        flex-direction: column;
+        height: auto;
+        min-height: 95vh;
+    }
+    #menuLat {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 15px;
+    }
+    #boxLogo {
+        width: auto;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    #logoApp {
+        max-width: 60px;
+    }
+    #modesPrinci,
+    .panneauSousMenu {
+        flex-direction: row;
+        width: auto;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    .btnMenu {
+        width: auto;
+        padding: 10px 15px;
+    }
+    .btnRetour {
+        width: auto;
+        margin-bottom: 0;
+    }
+    #statutLat {
+        width: 100%;
+        border-left: none;
+        border-top: 3px solid #1a1a1b;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .panneauJoueurs {
+        flex-direction: row;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    .blocJoueur {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #menuLat {
+        flex-direction: column;
+    }
+    #modesPrinci,
+    .panneauSousMenu {
+        width: 100%;
+        flex-direction: column;
+    }
+    .btnMenu {
+        width: 100%;
+    }
+    #tabJeu {
+        padding: 10px;
+        gap: 15px;
+    }
+    .lignePlateau {
+        padding: 8px 4px;
+    }
+    .case {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    #barreCtrl {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    #statutLat {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .panneauJoueurs {
+        width: 100%;
+        flex-direction: column;
+    }
+}

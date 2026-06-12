@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self' wss://*.peerjs.com https://*.peerjs.com;">
+    <title>SONGO P2P</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+
+<body>
+    <div id="appCont">
+        <aside id="menuLat">
+            <div id="boxLogo">
+                <img src="images/songo.png" alt="Logo Songo" id="logoApp">
+            </div>
+
+            <div id="modesPrinci">
+                <button type="button" class="btnMenu" id="btnIa">J1 VS IA</button>
+                <button type="button" class="btnMenu" id="btnP2p">J1 VS J2</button>
+            </div>
+
+            <div id="sousMenuP2p" class="panneauSousMenu" style="display: none;">
+                <button type="button" class="btnRetour retModes">⬅ Retour</button>
+                <button type="button" class="btnMenu" id="creerPartie">Créer une partie (Hôte)</button>
+                <button type="button" class="btnMenu" id="rejoindrePartie">Rejoindre une partie</button>
+            </div>
+
+            <div id="sousMenuIa" class="panneauSousMenu" style="display: none;">
+                <button type="button" class="btnRetour" id="retModesIa">⬅ Retour</button>
+                <button type="button" class="btnMenu" id="cfgIa">Nouvelle partie IA</button>
+            </div>
+        </aside>
+
+        <main id="cntPrinci">
+            <header id="entete">
+                <h1>SONGO</h1>
+            </header>
+            <div id="zoneCont">
+                <div id="zoneId" class="carteInfo" style="display: none;">
+                    <p>Partagez ce code avec votre adversaire :</p>
+                    <strong id="partageId">...</strong>
+                    <p id="attenteStatut">En attente de connexion du Joueur 2...</p>
+                </div>
+
+                <div id="zoneRej" class="carteInfo" style="display: none;">
+                    <input type="text" id="codeHote" placeholder="Coller le code de l'hôte ici">
+                    <button type="button" class="btnAct" id="validerConnexion">Se connecter</button>
+                </div>
+
+                <div id="champsPseudos" class="carteInfo" style="display: none;">
+                    <h3>Pseudonymes des joueurs</h3>
+                    <div class="groupeInput">
+                        <label for="champNom">Joueur 1 :</label>
+                        <input type="text" id="champNom" placeholder="Pseudo J1">
+                    </div>
+                    <div class="groupeInput" id="grpJ2">
+                        <label for="champNom2">Joueur 2 :</label>
+                        <input type="text" id="champNom2" placeholder="Pseudo J2">
+                    </div>
+                    <button type="button" class="btnAct" id="valider">Valider & Lancer</button>
+                </div>
+
+                <div id="jeuCont" style="display: none;">
+                    <div id="tabJeu">
+                        <div id="rangA" class="lignePlateau">
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                            <div class="case caseJ2">5</div>
+                        </div>
+                        <div id="rangB" class="lignePlateau">
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                            <div class="case caseJ1">5</div>
+                        </div>
+                    </div>
+
+                    <div id="barreCtrl">
+                        <p id="infos">Cliquer sur une case pour distribuer</p>
+                        <button type="button" class="btnAct" id="restart">Recommencer</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section id="statutLat" style="display: none;">
+            <div class="carteStatut">
+                <p id="boxRole">Mon rôle : <strong>Joueur <span id="roleAffiche">?</span></strong></p>
+            </div>
+            <div class="panneauJoueurs">
+                <div class="blocJoueur" id="blocJ1">
+                    <h4 id="pseudoAffiche">...</h4>
+                    <p class="txtScore">Score : <span id="score1">0</span> pts</p>
+                </div>
+                <div class="blocJoueur" id="blocJ2">
+                    <h4 id="pseudoAffiche2">...</h4>
+                    <p class="txtScore">Score : <span id="score2">0</span> pts</p>
+                </div>
+            </div>
+            <div id="res" style="display: none;"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
